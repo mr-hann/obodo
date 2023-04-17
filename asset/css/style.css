@@ -1,0 +1,144 @@
+:root{
+    --btn-background_color:#20B954;
+    --footer-background_color:#F7F7F7;
+    --text-color:#32323A;
+}
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family:Helvetica, sans-serif;
+    color: var(--text-color);
+
+}
+.navbar{
+    display: grid;
+    grid-template-columns:2fr 2fr;
+    grid-auto-rows:minmax(120px,auto);
+}
+.navbar-brand{
+    justify-self: start;
+    margin:34px 123px;
+}
+
+.btn{
+    background-color:var(--btn-background_color);
+    border-radius: 500px;
+    text-align: center;
+    border:1px solid var(--btn-background_color);
+    outline:none;
+    color: #F7F7F7;
+}
+.nav-btn{
+    justify-self: end;
+    margin:26px 123px;
+    padding: 19px 25px;
+    max-width: 111px;
+    height: 48px;
+}
+
+input {
+	background-color:#F5F5F5;
+    padding: 18px 22px;
+    outline: 0;
+    border: 0;
+	border-radius: 11px;
+}
+.footer{
+    display: grid;
+    background-color:var(--footer-background_color);
+    grid-template-columns:1fr 1fr 1fr;
+    padding:52px 128px;
+}
+.footer-social{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    justify-self: start;
+}
+.footer-social img{
+    margin:0 11px;
+}
+.footer-list__items{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    justify-items:center;
+}
+.footer-list__items>li{
+    justify-self:end;
+    margin:0 10px;
+    
+}
+.add-btn{
+    text-align: center;
+    padding: 19px 25px;
+    width: 183px;
+    height: 48px;
+}
+.img-responsive{
+    width:100%;
+    height: auto;
+}
+.illustration-section{
+    background-image: url("../../img/watermark.svg");
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: center;
+	text-align: center;
+    background-color: var(--btn-background_color);
+}
+.btn-form__submit{
+	width: 380px;
+	height:40px;
+	border-radius: 11px;
+	display: block;
+	border: 0;
+	margin-top: 30px;
+	margin-left:calc((100% - 380px)/2);
+	color: #ffffff;
+
+}
+.illustraion-img{
+    max-width: 375px;
+	height: 376px;
+	margin-top: calc((100vh - 376px)/2);
+	text-align: center;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width:768px) {
+    .navbar-brand{
+        height:auto;
+        margin:4% 2%;
+    }
+    .nav-btn{
+        margin:3% 2%; 
+        max-width: 111px;
+   }
+   .footer{
+        display:block;
+        width:100%;
+        padding:3% 2%;
+   }
+   .footer-social{
+        grid-template-columns:repeat(4,50px);
+   }
+   .footer-water-mark{
+        margin:15px 0;
+   }
+   .footer-list__items{
+        display:block;
+
+   }
+   .footer-list__items>li{
+        display: block;
+        margin-top:10px;
+
+    }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width:576px) { 
+    
+}

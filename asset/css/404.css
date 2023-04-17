@@ -1,0 +1,43 @@
+.main-body{
+    min-height: calc(90vh - (120px + 40px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.main-text{
+    margin-bottom:50px;
+}
+.main-body__text-sub,.main-body__text-main{
+    font-size: 64px;
+    line-height: 64px;
+    
+}
+.main-body__text-sub{
+    font-weight: 400;
+    padding:0 30px;
+}
+.main-body__text-main{
+    font-weight: 700;
+    border-right:2px dashed #32323A;
+    padding:0 30px;
+}
+.d-block{
+    display: block;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width:768px) {
+    .main-body__text-sub,.main-body__text-main{
+        font-size: 35px;
+        line-height: 30px;
+        display:flex;
+    }
+    .main-body__text-main{
+        border:0;
+    }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width:576px) { }
