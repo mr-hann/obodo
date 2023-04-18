@@ -81,7 +81,7 @@ input {
     width:100%;
     height: auto;
 }
-.illustration-section{
+div[class="illustration-section"]{
     background-image: url("../../img/watermark.svg");
 	background-repeat: no-repeat;
 	background-size: 150%;

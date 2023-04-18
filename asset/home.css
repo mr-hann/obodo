@@ -22,7 +22,7 @@ body{
 /* nav bar*/
 .nav-brand{
     display:grid;
-    grid-auto-rows:minmax(45px,auto);
+    grid-auto-rows:minmax(15px,auto);
     grid-template-columns:repeat(2,35px);
     text-transform:capitalize;
 }
@@ -60,6 +60,11 @@ body{
     text-decoration:none;
 }
 .hero-section{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+.hero-section{
     margin-top:10em;
     margin-left:var(--margin-LR);
     margin-right:var(--margin-LR);
@@ -80,7 +85,7 @@ body{
     max-width: 416px;
     
 }
-.community-section>img[src="img/img/illustration.svg"]{
+.community-section>img[src="img/home-img/Illustration.png"]{
     padding:0 0.5em;
     height: auto;
 }
@@ -101,11 +106,7 @@ body{
     font-size: 15px;
     line-height: 24px;
 }
-.hero-section{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    
-}
+
 .footer-section,.footer-links,.community-section{
     display:grid;
     grid-template-columns: repeat(3,auto);
@@ -156,7 +157,11 @@ body{
     text-transform:capitalize;
     margin-bottom:55px;
 }
-
+.dashboard{
+    display:block;
+    text-align:center;
+    margin: var(--margin-tb) var(--margin-LR);
+}
 .footer-section{
     text-transform:capitalize;
     background-color:#F5F5F5;
@@ -167,7 +172,7 @@ body{
 .footer-social{
     display:grid;
     grid-template-columns:repeat(4,35px);
-    margin:0 30px;
+   
 }
 
 ul{
@@ -183,14 +188,62 @@ ul{
 
 
 
+/* Medium devices (landscape tablets, 988px and up)*/
+@media only screen and (max-width:988px) {
+
+    .navbar,.footer-section{
+        padding:2em 0.5em;
+    }
+     .hero-section,.community-section{
+        margin:2em 0.5em;
+     }
+     .hero-section{
+        margin-top:10em;
+     }
+     .community-section>img[src="img/home-img/illustration.png"]{
+        margin:0;
+        height:auto;
+        max-width:auto;
+     }
+    .community-section>img[src="img/home-img/Feature Icons.png"]{
+        display: none;
+    }
+    .community-text{
+        margin-left:2.5em;
+        padding-left:1.5em;
+    }
+     .hero-header__text,.community-text__header{
+        font-size:45px;
+     }
+     .outro-text__header{
+        font-size:40px;
+     }
+     .footer-links{
+        display: block;
+     }
+     .footer-links li{
+        margin-top:10px;
+     }
+}
+
+@media only screen and (min-width:1300px) {
+    .community-section>img[src="img/home-img/Illustration.png"]{
+        margin:0 65px;
+        max-width: 480px;
+        height: 464px;
+    }
+}
+
+
 
 /* Extra small devices (phones, 576px and down) */
 @media only screen and (max-width:576px) { 
     .navbar{
-        padding:2em 10px;
+        padding:10px;
+        max-height:80px;
     }
     .brand-text{
-        margin:10px 0;
+        margin:2px 0;
     }
     .hero-section{
         display:block;
@@ -207,10 +260,10 @@ ul{
         margin:3em 10px;
         display: block;
     }
-    .community-section>img[src="img/img/Feature Icons.svg"]{
+    .community-section>img[src="img/home-img/Feature Icon.png"]{
         display: none;
     }
-   .community-section>img[src="img/img/illustration.svg"],.hero-img{
+   .community-section>img[src="img/home-img/Illustration.png"],.hero-img{
         margin:0;
         height:auto;
         max-width:100%;
@@ -233,6 +286,11 @@ ul{
         margin:3em 10px;
    
     }
+    .dashboard{
+        display:block;
+        text-align:center;
+        margin:3em 10px;
+    }
     .footer-section{
         margin:var(--margin-tb) 0 0 0;
         padding:2em 10px 10px 10px;
@@ -247,48 +305,4 @@ ul{
 
 }
 
-/* Medium devices (landscape tablets, 988px and up)*/
-@media only screen and (max-width:988px) {
 
-    .navbar,.footer-section{
-        padding:2em 0.5em;
-    }
-     .hero-section,.community-section{
-        margin:2em 0.5em;
-     }
-     .hero-section{
-        margin-top:10em;
-     }
-     .community-section>img[src="img/img/illustration.svg"]{
-        margin:0;
-        height:auto;
-        max-width:auto;
-     }
-    .community-section>img[src="img/img/Feature Icons.svg"]{
-        display: none;
-    }
-    .community-text{
-        margin-left:2.5em;
-        padding-left:1.5em;
-    }
-     .hero-header__text,.community-text__header{
-        font-size:45px;
-     }
-     .outro-text__header{
-        font-size:40px;
-     }
-     .footer-links{
-        display: block;
-     }
-     .footer-links li{
-        margin-top:10px;
-     }
-}
-
-@media only screen and (min-width:1300px) {
-    .community-section>img[src="img/img/illustration.svg"]{
-        margin:0 65px;
-        max-width: 480px;
-        height: 464px;
-    }
-}
