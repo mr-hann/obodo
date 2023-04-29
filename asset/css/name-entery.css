@@ -1,0 +1,116 @@
+.illustration-section{
+    height:100vh;
+    display: block;
+    
+}
+.main{
+    margin: auto;
+}
+.illustration-section img{
+    max-width: 375px;
+	height: 376px;
+    margin:calc((100vh - 380px)/2) auto;
+
+}
+header{
+    margin-bottom:75px;
+}
+header>span{
+    font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 21px;
+	color: #32323A;
+	padding:10px;
+}
+.progress{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    width:100%;
+    column-gap:8px;
+}
+.progress>span{
+    width: 94px;
+    height: 8px;
+    background: #D6D6D8;
+    border-radius: 500px;
+}
+.progress>span[class="active"]{
+    background:#20B954;
+}
+.text-section h2,label[for]{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #32323A;
+}
+.text-section{
+    margin-top:40px;
+}
+.text-section>p{
+    margin-top:16px;
+}
+div[class="inputs"]{
+    margin-top:64px;
+}
+label{
+    display: block;
+    margin-bottom:24px;
+}
+input{
+    border:none;
+    outline:none;
+    padding: 0px 0px 8px;
+    background:inherit;
+    border-radius: 0;
+}
+input[id="community name"]{
+    border-bottom: 1px solid #EBEBEB;
+    margin-bottom:72px;
+}
+.input-field{
+    display:grid;
+    grid-template-columns:4fr 1fr;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width:868px) {
+    .illustration-section{
+        display: none;
+    }
+    div[class="grid"]{
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+    header{
+        margin:20px 0 45px 20px;
+    }
+    .main{
+        margin:20px auto;
+        display: block;
+        width:100%;
+    }
+    .progress>span{
+        width: 70px;
+    }
+  
+    form{
+        margin:auto;
+    }
+}
+@media only screen and (max-width:268px) {
+    .main{
+        margin:5px;
+    }
+    .progress>span{
+        width: 40px;
+    }
+    .main-signUp__text>p::before,.main-signUp__text>p::after{
+        width:40px;
+       
+    }
+}

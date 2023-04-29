@@ -13,6 +13,14 @@ body{
     color: var(--text-color);
 
 }
+form{
+    max-width: 380px;
+}
+div[class="grid"]{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+
 .navbar{
     display: grid;
     grid-template-columns:2fr 2fr;
@@ -45,6 +53,7 @@ input{
     outline: 0;
     border: 0;
 	border-radius: 11px;
+    width:100%;
 }
 .footer{
     display: grid;
@@ -90,7 +99,6 @@ div[class="illustration-section"]{
     background-color: var(--btn-background_color);
 }
 .btn-form__submit{
-	width: 380px;
 	height:40px;
 	border-radius: 11px;
 	display: block;

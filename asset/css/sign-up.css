@@ -1,98 +1,44 @@
-:root{
-	--margin-tb:12px;
-}
-/*body*/
-body {
-	font-family: 'Helvetica';
-	font-style: normal;
-	background-color: #ffffff;
-	height: 100vh;
-	width: 100%;
-	color: #5B5B61;
-}
-/*grid sytem*/
-.grid {
-	display:grid;
-	grid-template-columns: repeat(2, minmax(50%, auto));
-	width:100%;
-	height: 100vh;
-}
 
 .main{
-	display: block;
-	height: 100vh;
-	background-color:#ffffff;
-	margin:0 auto;
+    margin:auto;
+}
+header{
+    margin-bottom:1em;
+}
+.form-text__header,.form-text-sub__header{
+    text-align: center;
 }
 
-.mt-4{
-	margin-top:24px;
+.form-text__header,header>span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom:11px;
 }
-
-header {
-	max-width: 80%;
-	height: 50px;
-	margin:var(--margin-tb) auto;
-}
-
-.logo{
-	max-width: 30px;
-	height:30px;
-}
-.form-text-sub__header,.form-small__Text,.input-section>input{
-	margin-bottom:var(--margin-tb);
-}
-label{
-	margin-bottom:7px;
-}
-header > span {
-	font-family: 'Helvetica';
+header>span{
+    font-family: 'Helvetica';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 25px;
 	line-height: 21px;
 	color: #32323A;
 	padding:10px;
-	
 }
-.form-small__Text{
-	font-weight: 300;
-	font-size: 13px;
-	text-align: center;
-}
-form .form-text__header{
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 24px;
-	text-align: center;
-	color: #32323A;
-
-}
-
-.form-text__sub{
-	
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 18px;
-	text-align: center;
-	color: #5B5B61;
-	display: block;
-	text-align: center;
-	
-}
-.form-social__btn{
-	background-color:#ffffff;
-	border:1px solid #c2c2c4;
-	outline:0;
-	padding:10px;
-	font-weight: 600;
-    height: 48px;
-	width:180px;
-	margin:15px 5px;
-	border-radius: 10px;
+.illustration-section{
+    height:100vh;
+    display: block;
     
 }
+.illustration-section img{
+    max-width: 375px;
+	height: 376px;
+    margin:calc((100vh - 380px)/2) auto;
 
+}
+.btn-form__submit{
+    padding:19px 122px;
+}
 .main-signUp__text>p::before,.main-signUp__text>p::after{
 	content:"";
 	display:inline-block;
@@ -101,111 +47,106 @@ form .form-text__header{
 	margin:5px;
 	background-color:#c2c2c4;
 }
-.main-signUp__text,.link-text{
-	text-align: center;
-	margin-top:var(--margin-tb);
+.input-section{
+    padding-top:24px;
+    margin:0;
 }
-.link-text{
-	font-weight:600;
-	font-size:15px;
+.form-social__btn{
+    padding: 15px 17px;
+    width: 172px;
+    height: 48px;
+    border: 1px solid #EBEBEB;
+    border-radius: 11px;
+    background: #fff;
 }
-.link-text a{
-	color: #23CD5D;
-	text-decoration: none;
+input[name]:not(:last-child){
+    margin-bottom:16px;
 }
-input{
-	width:380px;
-	max-height: 50px;
-	display: block;
-	padding: 18px 22px;
-	margin-left:calc((100% - 380px)/2);
-}
-label{
-	width:380px;
-	max-height: 50px;
-	display: block;
-	margin-top: px;
-	margin-left:calc((100% - 380px)/2);
-}
-::placeholder {
-	padding-left: 22px;
+label[for]{
+    padding:8px 0;
 }
 .btn-form__submit{
-	margin-top:0;
+    align-items: center;
+    padding: 19px 24px;
+    width:100%;
+    height: 48px;
+    background: #20B954;
+    border-radius: 11px;
+    margin:0;
+    font-weight: 600;
 }
-.form-text-sub__header{
-	display: flex;
+.form-social{
+    display: grid;
+    grid-template-columns:auto auto;
+    justify-content: space-between;
 }
-.form-text-sub__header span{
+.form-social__btn span{
 	font-family: 'Helvetica';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
-	line-height: 17px;
-	text-align:center;
-	margin:10px;
+	line-height: 15px;
 }
-.illustration-section img {
-	display: block;
-	max-width: 375px;
-	height: 376px;
-	margin:calc((100vh - 376px)/2) auto;
+.form-small__Text,.main-signUp__text{
+    font-family: 'Helvetica';
+    padding:0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    margin:16px 0;
 }
-
-.grid>div:nth-child(2){
-	background-color: #23CD5D;
+.link-text{
+    margin-top:24px;
+    text-align: center;
 }
-.img-responsive{
-	width:100%;
-	height:auto;
+.link-text a{
+    text-decoration: none;
+    color: #20B954;
+    font-weight: 700;
 }
-.form-social__btn span{
-	padding:5px 0;
-}
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width:768px) {
-	.grid {
-		grid-template-columns: 1fr;
-	}
-
-	.illustration-section{
-		display: none;
-	 }
-	.btn-form__submit{
-		width:97%;
-		margin-left:calc((100% - 97%)/2);
-	}
-	input,label{
-		width:97%;
-		margin-left:calc((100% - 97%)/2);
-	}
+    .illustration-section{
+        display: none;
+    }
+    div[class="grid"]{
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+    .main{
+        display: block;
+        width:100%;
+    }
+    .form-social{
+        display: grid;
+        grid-template-columns:auto auto;
+       justify-content: center;
+       column-gap:8%;
+    }
+    form{
+        margin:auto;
+    }
+    .main-signUp__text>p::before,.main-signUp__text>p::after{
+	    width:80px;
+	
+    }
 }
+@media only screen and (max-width:268px) {
+    .form-social{
+        display: block;
 
-/* Extra small devices (phones, 576px and down) */
-@media only screen and (max-width:576px) { 
-	.illustration-section{
-		display: none;
-	 }
-	.btn-form__submit{
-		width:95%;
-		margin-left:2.5%;
-	}
-	input{
-		display: block;
-		width:95%;
-		margin-left:2.5%;
-	}
-	.main-signUp__text>p::before,.main-signUp__text>p::after{
-		width:calc((100%-100px)/5);
-	}
-	.form-social{
-		display:flex;
-	}
-	.form-social__btn{
-		padding:1.5% 5%;
-		width:calc((100%/2)-10px);
-		height: 48px;
-		margin:15px 10px;
-	}
+    }
+    .form-social button{
+        margin-top:10px;
+    }
+    .main{
+        margin:5px;
+    }
+    .main-signUp__text>p::before,.main-signUp__text>p::after{
+        width:40px;
+       
+    }
 }

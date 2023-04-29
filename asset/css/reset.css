@@ -6,7 +6,7 @@ body {
 	width: 100%;
 }
 
-.grid {
+div[class="grid"] {
 	display:grid;
 	grid-template-columns: repeat(2, minmax(50%, auto));
 	width:100%;
@@ -15,23 +15,14 @@ body {
 
 .grid > div {
 	height: 100vh;
-	background-color:#ffffff;
+	
 }
-
-
-
-header {
-	max-width: 80%;
-	height: 50px;
+.grid > div:first-child {
 	margin: auto;
-	margin-top: 43px;
 }
-
-.logo{
-
-	max-width: 30px;
-	height:30px;
-	margin-top: 10px;
+header {
+	height: 50px;
+	margin-top: 43px;
 }
 
 header > span {
@@ -76,7 +67,7 @@ input {
 	width:380px;
 	max-height: 50px;
 	display: block;
-	margin-top: 38px;
+	margin-top: 44px;
 	padding: 18px 22px;
 	margin-left:calc((100% - 380px)/2);
 }
@@ -85,6 +76,16 @@ input {
 	padding-left: 22px;
 }
 
+.btn-form__submit{
+    align-items: center;
+    padding: 19px 24px;
+    width:380px;
+    height: 48px;
+    background: #20B954;
+    border-radius: 11px;
+    margin-top: 16px;
+    font-weight: 600;
+}
 
 
 div > img {
