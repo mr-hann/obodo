@@ -37,29 +37,30 @@
           <form>
             <div class="progress">
               <span class="active"></span>
-              <span></span>
+              <span class="active"></span>
               <span></span>
               <span></span>
             </div>
-            <div class="text-section">
-              <h2>Welcome, Andrew Diete-Koki</h2>
-              <p>Get started by setting up your community and letting us know what you are interested in.</p>
-            </div>
-
+            
             <div class="inputs">
-              <label for="community name">What’s your community name?</label>
-                <input type="text" id="community name" placeholder="Brand name"/>
+            <label for="members-btn">What are your members called?</label>
+            <div class="members-btn">
+                <button>Customers</button>
+                <button>Followers</button>
+                <button>Family</button>
+                <button>
+                      <img src="img/icons/plus.png" alt="plus"/>
+                </button>
 
-              <label for="community-url">Community URL</label>
-                <div class="input-field">
-                  <input type="text" id="community-url" placeholder="Brand url"/>
-                  <span>.obodo.com</span>
-                </div>
-                <div class="btn-links">
-                  <a class="def">Continue</a>
-              </div>
             </div>
+            <div class="btn-links">
+                <a class="active" href="#" >Continue</a>
+                <a href="intrested.html">skip</a>
+            </div>
+            </div>
+            
               
+            
           </form>
         </div>
 
@@ -69,51 +70,87 @@
           
      </div>
        
-<script>
+   <script>
+        //sellecting elements
+        let addbtn=document.querySelector('button:last-child');
+        let form=document.querySelector('form');
+         
+        let membersBtn=document.querySelectorAll('.members-btn button');
 
-  
-  /*let form=document.forms;
-  form[0].addEventListener('submit',(e)=>{
-    e.preventDefault();
-  })*/
+        //creating the element
+        let membersDiv=document.querySelector('.members-btn');
+        let inputDiv=document.createElement('div');
+        inputDiv.setAttribute('class','name-of-members');
 
-  let inputs=document.querySelectorAll('input');
-  let btn=document.querySelector('.btn-links>a');
+        let span=document.createElement('span');
+        span.innerHTML='<img src="img/icons/close.png" alt="x">';
 
-  
-  
 
-  for(let i=0;i<inputs.length; i++){
+        let input=document.createElement('input');
+        input.setAttribute('placeholder','Custom name');
 
-    //when typing checking if the input is empty to activate the next face
-
-    inputs[i].addEventListener('keyup',(h)=>{
-
-      if(inputs[0].value.length>2 && inputs[1].value.length>2){
-
-        btn.setAttribute("class", "active");
-        btn.setAttribute("href", "member.html");
-
-      }else{
-
-        btn.removeAttribute("class");
-        btn.removeAttribute("href");
-
-        btn.setAttribute("class", "def");
-
-      }
-    })
-
-    //submit
-    btn.addEventListener('click',(e)=>{
+        inputDiv.appendChild(input);
+        inputDiv.appendChild(span);
+       
+         //prevennting form from submiting
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+        });
 
         
-      });
-  }
-  
-  
+        
+
+        /*adding the created element to 
+        the page and removing btns */
+        addbtn.addEventListener('click',(e)=>{
+           
+            
+            //remove the btns
+            for(let i=0;i<membersBtn.length;i++){
+
+                if(membersBtn[i].style.display=="none"){
+                    membersBtn[i].style.display="inline-block";
+                    inputDiv.style.display="none";
+                }else{
+                    membersBtn[i].style.display="none";
+                    inputDiv.style.display="grid";
+                }
+            }
+            
+            
+            membersDiv.appendChild(inputDiv);
+        });
+
+        span.addEventListener('click',(e)=>{
+
+            //unhidding btn
+            for(let i=0;i<membersBtn.length;i++){
+
+                if(membersBtn[i].style.display=="none"){
+                    membersBtn[i].style.display="inline-block";
+                      //hidding input
+                      inputDiv.style.display="none";
+                }else{
+                    membersBtn[i].style.display="none";
+                     
+                     inputDiv.style.display="grid";
+                }
+
+            }
+          
+        });
 
 
-</script>
+        //to sellect members
+        for(let i=0; i<3;i++){
+          membersBtn[i].addEventListener('click',(e)=>{
+
+           
+              e.target.classList.toggle("sellected");
+              
+            
+          })
+        }
+   </script>    
 </body>
 </html>

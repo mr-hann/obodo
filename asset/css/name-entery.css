@@ -1,10 +1,13 @@
+body{
+    overflow-y: hidden;
+}
 .illustration-section{
     height:100vh;
     display: block;
-    
 }
 .main{
-    margin: auto;
+    margin:40px auto 0 auto;
+    height:100vh;
 }
 .illustration-section img{
     max-width: 375px;
@@ -13,7 +16,7 @@
 
 }
 header{
-    margin-bottom:75px;
+    margin-bottom:1.5em;
 }
 header>span{
     font-family: 'Helvetica';
@@ -39,6 +42,7 @@ header>span{
 .progress>span[class="active"]{
     background:#20B954;
 }
+
 .text-section h2,label[for]{
     font-style: normal;
     font-weight: 700;
@@ -75,8 +79,66 @@ input[id="community name"]{
     grid-template-columns:4fr 1fr;
     border-bottom: 1px solid #EBEBEB;
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
+/*member page*/
+button [class="def"],.btn-links a[class="def"]{
+    color: #D6D6D8;
+    background: #F5F5F5;
+}
+.btn-links a,button{
+    outline:none;
+    text-decoration:none;
+	padding: 19px 25px;
+	border-radius: 500px;
+	max-width: 117px;
+    border:1px solid #fff;
+    background:#fff;
+	
+}
+button{
+    margin-top:32px;
+}
+.members-btn{
+    display: grid;
+    grid-template-columns:repeat(4,auto);
+    column-gap: 8px;
+    margin:0 auto;
+}
+.members-btn button{
+    padding: 16px 20px;
+    max-width:113px;
+    color: #32323A;
+    background: #F5F5F5;
+    border-radius: 500px;
+}
+.members-btn button svg{
+    color:#32323A;
+}
+.btn-links>a[class="active"],.input button[class="active"]{
+    background:#20B954;
+    border:1px solid #20B954;
+    color: #fff;
+}
+.btn-links a{
+    display:inline-block;
+    color: #32323A;
+    margin-top:25px;
+}
+label[for="members-btn"]{
+    margin:0;
+}
+/*new input on click (members page)*/
+.name-of-members{
+    padding:13px 16px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 4fr 0.1fr;
+    height: 40px;
+    margin-top:24px;
+    background: #F5F5F5;
+    border-radius: 500px;
+}
+/*end member page*/
+/* Medium devices (landscape tablets, 868px and up) */
 @media only screen and (max-width:868px) {
     .illustration-section{
         display: none;
@@ -90,16 +152,27 @@ input[id="community name"]{
         margin:20px 0 45px 20px;
     }
     .main{
-        margin:20px auto;
+        margin:auto;
         display: block;
-        width:100%;
+        width:95%;
+    }
+    .progress{
+        column-gap:4px;
     }
     .progress>span{
-        width: 70px;
+        width:calc((100%/4)-4px);
     }
   
     form{
         margin:auto;
+    }
+}
+/* Medium devices (landscape tablets, 368px and up) */
+@media only screen and (max-width:368px) {
+    .members-btn{
+       
+        grid-template-columns:repeat(3,auto);
+        
     }
 }
 @media only screen and (max-width:268px) {
@@ -112,5 +185,10 @@ input[id="community name"]{
     .main-signUp__text>p::before,.main-signUp__text>p::after{
         width:40px;
        
+    }
+    .members-btn{
+       
+        grid-template-columns:repeat(2,auto);
+        
     }
 }

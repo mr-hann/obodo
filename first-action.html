@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="asset/css/style.css">
   <link rel="stylesheet" type="text/css" href="asset/css/name-entery.css">
+  <link rel="stylesheet" type="text/css" href="asset/css/first-action.css">
   <link rel="icon" type="image/svg" href="img/obodo.svg">
   <title>Obodo | sign-up/name Entery</title>
 </head>
@@ -37,29 +38,82 @@
           <form>
             <div class="progress">
               <span class="active"></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              <span class="active"></span>
+              <span class="active"></span>
+              <span class="active"></span>
             </div>
-            <div class="text-section">
-              <h2>Welcome, Andrew Diete-Koki</h2>
-              <p>Get started by setting up your community and letting us know what you are interested in.</p>
-            </div>
-
+            
             <div class="inputs">
-              <label for="community name">What’s your community name?</label>
-                <input type="text" id="community name" placeholder="Brand name"/>
+                <label for="members-btn">What do you want to do first?</label>
+            <div class="todo">
 
-              <label for="community-url">Community URL</label>
-                <div class="input-field">
-                  <input type="text" id="community-url" placeholder="Brand url"/>
-                  <span>.obodo.com</span>
+               <div class="todo-actions">
+
+                    <div>
+                        <img src="img/icons/group.svg" alt="img"/>
+                    </div>
+
+                    <span>
+                        <h2>Sync members</h2>
+                        <p>Invite or import members</p>
+                    </span>
+
+                    <span>
+                        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.03 0.861851C5.2904 0.601555 5.71251 0.601644 5.9728 0.862048L10.6385 5.52969C10.8988 5.79006 10.8987 6.21209 10.6384 6.4724L5.97271 11.1381C5.71236 11.3984 5.29025 11.3984 5.0299 11.1381C4.76955 10.8777 4.76955 10.4556 5.0299 10.1953L8.55752 6.66766H0.833659C0.465469 6.66766 0.166992 6.36919 0.166992 6.001C0.166992 5.63281 0.465469 5.33433 0.833659 5.33433H8.55799L5.0298 1.80466C4.7695 1.54426 4.76959 1.12215 5.03 0.861851Z" fill="#99999D"/>
+                        </svg>
+                    </span>
+
+               </div>
+
+                <div class="todo-actions">
+
+                    <div>
+                        <img src="img/icons/Vector (Stroke).svg" alt="img"/>
+                    </div>
+
+                    <span>
+                        <h2>Host event</h2>
+                        <p>Connect with your community</p>
+                    </span>
+
+                    <span>
+                        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.03 0.861851C5.2904 0.601555 5.71251 0.601644 5.9728 0.862048L10.6385 5.52969C10.8988 5.79006 10.8987 6.21209 10.6384 6.4724L5.97271 11.1381C5.71236 11.3984 5.29025 11.3984 5.0299 11.1381C4.76955 10.8777 4.76955 10.4556 5.0299 10.1953L8.55752 6.66766H0.833659C0.465469 6.66766 0.166992 6.36919 0.166992 6.001C0.166992 5.63281 0.465469 5.33433 0.833659 5.33433H8.55799L5.0298 1.80466C4.7695 1.54426 4.76959 1.12215 5.03 0.861851Z" fill="#99999D"/>
+                        </svg>
+                    </span>
+
                 </div>
-                <div class="btn-links">
-                  <a class="def">Continue</a>
-              </div>
+
+                <div class="todo-actions">
+
+                    <div>
+                        <img src="img/icons/dashboard.svg" alt="img"/>
+                    </div>
+
+                    <span>
+                        <h2>Go to Dashboard</h2>
+                    </span>
+
+                    <span>
+                        <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.03 0.861851C5.2904 0.601555 5.71251 0.601644 5.9728 0.862048L10.6385 5.52969C10.8988 5.79006 10.8987 6.21209 10.6384 6.4724L5.97271 11.1381C5.71236 11.3984 5.29025 11.3984 5.0299 11.1381C4.76955 10.8777 4.76955 10.4556 5.0299 10.1953L8.55752 6.66766H0.833659C0.465469 6.66766 0.166992 6.36919 0.166992 6.001C0.166992 5.63281 0.465469 5.33433 0.833659 5.33433H8.55799L5.0298 1.80466C4.7695 1.54426 4.76959 1.12215 5.03 0.861851Z" fill="#99999D"/>
+                        </svg>
+                    </span>
+
+                </div>
+
             </div>
+
+            <div class="btn-links">
+                <a class="active" href="#" >Continue</a>
+                <a href="#">skip</a>
+            </div>
+                
+            </div>
+            
               
+            
           </form>
         </div>
 
@@ -69,51 +123,5 @@
           
      </div>
        
-<script>
-
-  
-  /*let form=document.forms;
-  form[0].addEventListener('submit',(e)=>{
-    e.preventDefault();
-  })*/
-
-  let inputs=document.querySelectorAll('input');
-  let btn=document.querySelector('.btn-links>a');
-
-  
-  
-
-  for(let i=0;i<inputs.length; i++){
-
-    //when typing checking if the input is empty to activate the next face
-
-    inputs[i].addEventListener('keyup',(h)=>{
-
-      if(inputs[0].value.length>2 && inputs[1].value.length>2){
-
-        btn.setAttribute("class", "active");
-        btn.setAttribute("href", "member.html");
-
-      }else{
-
-        btn.removeAttribute("class");
-        btn.removeAttribute("href");
-
-        btn.setAttribute("class", "def");
-
-      }
-    })
-
-    //submit
-    btn.addEventListener('click',(e)=>{
-
-        
-      });
-  }
-  
-  
-
-
-</script>
-</body>
-</html>
+    </body>
+    </html>

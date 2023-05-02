@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="asset/css/style.css">
   <link rel="stylesheet" type="text/css" href="asset/css/name-entery.css">
+  <link rel="stylesheet" type="text/css" href="asset/css/intrested.css">
   <link rel="icon" type="image/svg" href="img/obodo.svg">
   <title>Obodo | sign-up/name Entery</title>
 </head>
@@ -37,29 +38,30 @@
           <form>
             <div class="progress">
               <span class="active"></span>
-              <span></span>
-              <span></span>
+              <span class="active"></span>
+              <span class="active"></span>
               <span></span>
             </div>
-            <div class="text-section">
-              <h2>Welcome, Andrew Diete-Koki</h2>
-              <p>Get started by setting up your community and letting us know what you are interested in.</p>
-            </div>
-
+            
             <div class="inputs">
-              <label for="community name">What’s your community name?</label>
-                <input type="text" id="community name" placeholder="Brand name"/>
-
-              <label for="community-url">Community URL</label>
-                <div class="input-field">
-                  <input type="text" id="community-url" placeholder="Brand url"/>
-                  <span>.obodo.com</span>
-                </div>
-                <div class="btn-links">
-                  <a class="def">Continue</a>
-              </div>
+            <label for="members-btn">What are you interested in?</label>
+            <div class="members-btn">
+                <button class="sellected">Food & Drinks</button>
+                <button>Politics</button>
+                <button>Real Estate</button>
+                <button>Music</button>
+                <button>Health</button>
+                <button>Entertainment</button>
             </div>
+
+                <div class="btn-links">
+                    <a class="active" href="#" >Continue</a>
+                    <a href="first-action.html">skip</a>
+                </div>
+            </div>
+            
               
+            
           </form>
         </div>
 
@@ -68,52 +70,18 @@
           </div>
           
      </div>
-       
-<script>
 
-  
-  /*let form=document.forms;
-  form[0].addEventListener('submit',(e)=>{
-    e.preventDefault();
-  })*/
-
-  let inputs=document.querySelectorAll('input');
-  let btn=document.querySelector('.btn-links>a');
-
-  
-  
-
-  for(let i=0;i<inputs.length; i++){
-
-    //when typing checking if the input is empty to activate the next face
-
-    inputs[i].addEventListener('keyup',(h)=>{
-
-      if(inputs[0].value.length>2 && inputs[1].value.length>2){
-
-        btn.setAttribute("class", "active");
-        btn.setAttribute("href", "member.html");
-
-      }else{
-
-        btn.removeAttribute("class");
-        btn.removeAttribute("href");
-
-        btn.setAttribute("class", "def");
-
-      }
-    })
-
-    //submit
-    btn.addEventListener('click',(e)=>{
-
-        
-      });
-  }
-  
-  
-
-
-</script>
-</body>
-</html>
+    <script>
+        let form =document.forms;
+        form[0].addEventListener('submit',(e)=>{
+            e.preventDefault();
+        })
+        let buttons=document.querySelectorAll(".members-btn button");
+    for(let i=0;i<buttons.length;i++){
+        buttons[i].addEventListener('click',(e)=>{
+            e.target.classList.toggle("sellected");
+        })
+    }
+    </script>
+     </body>
+     </html>

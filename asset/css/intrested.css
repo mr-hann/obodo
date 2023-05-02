@@ -1,0 +1,21 @@
+.members-btn{
+    display:grid;
+    grid-template-columns: repeat(3,auto);
+    gap:8px;
+    margin-top:24px;
+}
+.members-btn button{
+    padding: 16px 20px;
+    max-width: 136px;
+    margin:0;
+}
+.members-btn button[class="sellected"]{
+    background: #D3F5DF;
+}
+/* Medium devices (landscape tablets, 368px and up) */
+@media only screen and (max-width:368px) {
+    .members-btn{
+        grid-template-columns:repeat(2,auto);
+        
+    }
+}
