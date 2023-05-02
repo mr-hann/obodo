@@ -197,6 +197,7 @@ label{
 		display: none;
 	 }
 	.btn-form__submit{
+                display:block;
 		width:95%;
 		margin-left:2.5%;
 	}
@@ -209,7 +210,8 @@ label{
 		width:calc((100%-100px)/5);
 	}
 	.form-social{
-		display:flex;
+		display:grid;
+                grid-template-columns:repeat(2,auto);
 	}
 	.form-social__btn{
 		padding:1.5% 5%;
