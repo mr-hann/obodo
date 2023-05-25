@@ -6,7 +6,7 @@ let passwordReg= document.getElementById('password-reg');
 
 //importing firbase to project
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getFirestore,collection,addDoc} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+import { getFirestore,doc,setDoc} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 //importing firebase auth buildin functions
 import { 
     getAuth, 
@@ -71,7 +71,7 @@ emailReg.addEventListener('keyup',(e)=>{
    }
 })
 
-const colref=collection(db,'users');
+//const colref=collection(db,'users');
 
  //sign up auth
 const signUp = async (e)=>{
@@ -87,16 +87,15 @@ const signUp = async (e)=>{
    
       let userData = await createUserWithEmailAndPassword(auth,valueEmail,valuePassword).then((u) => {
          
-        addDoc(colref,{
+      setDoc(doc(db,'users',u.user.uid),{
             avatarURL:"",
             email:u.user.email,
             id:u.user.uid,
             name:userName.value,
             phoneNumber:""
         }).then(()=>{
-    
-      monitorChange();
-   });
+            monitorChange();
+          });
       })
       
    }catch(error){
