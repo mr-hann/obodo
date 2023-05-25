@@ -32,6 +32,7 @@ header>span{
     grid-template-columns: repeat(4,auto);
     width:100%;
     column-gap:8px;
+    margin:auto;
 }
 .progress>span{
     width: 94px;
@@ -173,6 +174,13 @@ label[for="members-btn"]{
        
         grid-template-columns:repeat(3,auto);
         
+    }
+    .progress{
+        column-gap:4px;
+        margin:auto;
+    }
+    .progress>span{
+        width:calc((100%/4)-4px);
     }
 }
 @media only screen and (max-width:268px) {

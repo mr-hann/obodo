@@ -8,9 +8,6 @@
   <link rel="stylesheet" type="text/css" href="asset/css/sign-up.css">
   <link rel="icon" type="image/svg" href="img/obodo.svg">
   <title>Obodo | sign up</title>
-  <style>
-
-  </style>
 </head>
 <body>
 
@@ -38,7 +35,7 @@
         <span>Obodo</span>
      </header>
 
-     <form>
+     <form class="sign-up">
       <p class="form-text__header">Create Account</p>
         <div class="form-text-sub__header">
             <img src="img/Frame 13855.svg" alt="img">
@@ -47,14 +44,16 @@
 
         <div class="input-section">
 
+          <div class="msg"><span></span><img src="img/icons/close.png"></div>
+
           <label for="Fullname">Fullname</label>
-            <input type="Full-name" name="full-name" id="Fullname" placeholder="Fullname"/>
+            <input type="Full-name" name="full-name" id="Fullname-reg" placeholder="Fullname"/>
         
           <label for="e-mail">E-mail address</label>
-            <input type="E-mail" name="e-mail" id="e-mail" placeholder="E-mail address"/>
+            <input type="E-mail" name="e-mail" id="e-mail-reg" placeholder="E-mail address"/>
           
           <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Password"/>
+            <input type="password" name="password" id="password-reg" placeholder="Password"/>
         
           </div>
         
@@ -90,6 +89,6 @@
    </div>
    
   </div>
-
+<script type="module" src="src/signupUi.js"></script>
 </body>
 </html>

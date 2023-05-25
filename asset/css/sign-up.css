@@ -36,6 +36,18 @@ header>span{
     margin:calc((100vh - 380px)/2) auto;
 
 }
+div[class="msg"]{
+	padding:8px 0 8px 20px;
+	color:rgb(221, 15, 15);
+	background:rgba(241, 72, 72, 0.349);
+	display: grid;
+	grid-template-columns:1fr 0.09fr;
+	border-radius:500px;
+	justify-content: center;
+	align-items: center;
+	margin:20px auto;
+	display: none;
+}
 .btn-form__submit{
     padding:19px 122px;
 }
@@ -134,7 +146,7 @@ label[for]{
 	
     }
 }
-@media only screen and (max-width:268px) {
+@media only screen and (max-width:350px) {
     .form-social{
         display: block;
 

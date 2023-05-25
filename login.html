@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="asset/css/login.css">
   <link rel="icon" type="image/svg" href="img/obodo.svg">
   <title>Obodo |  login</title>
+  <script type="module" src="src/index.js"></script>
 </head>
 <body>
 
@@ -35,11 +36,14 @@
       <span>Obodo</span>
      </header>
 
-     <form>
+     <form class="login-form">
 
       <p class="form-text__header">Login to Obodo</p>
         
         <div class="input-section mt-4">
+
+          <div class="msg"><span></span><img src="img/icons/close.png"></div>
+
           <label for="e-mail">E-mail address</label>
             <input type="E-mail" name="e-mail" id="e-mail" placeholder="E-mail address"/>
           <label for="password">Password</label>
@@ -50,7 +54,6 @@
        
         <div class="main-signUp__text ">
             <p>or login with</p>
-            
         </div>
      </form>
        <div class="form-social">
@@ -74,6 +77,6 @@
    
   </div>
 
-
+<script type="module" src="src/loginui.js"></script>
 </body>
 </html>

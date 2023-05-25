@@ -13,9 +13,8 @@ body {
 
 .main{
 	display: block;
-	height: 100vh;
 	background-color:#ffffff;
-	margin:0 auto;
+	margin:auto;
 }
 
 .mt-4{
@@ -115,11 +114,11 @@ input{
 }
 label{
 	width:380px;
-	max-height: 50px;
-	display: block;
-	margin-top: px;
+	max-height:50px;
 	margin-left:calc((100% - 380px)/2);
 }
+
+
 ::placeholder {
 	padding-left: 22px;
 }
@@ -192,12 +191,12 @@ label{
 }
 
 /* Extra small devices (phones, 576px and down) */
-@media only screen and (max-width:576px) { 
+@media only screen and (max-width:350px) { 
 	.illustration-section{
 		display: none;
 	 }
 	.btn-form__submit{
-                display:block;
+        display:block;
 		width:95%;
 		margin-left:2.5%;
 	}
@@ -210,9 +209,9 @@ label{
 		width:calc((100%-100px)/5);
 	}
 	.form-social{
-		display:grid;
-                grid-template-columns:repeat(2,auto);
-	}
+        display: block;
+
+    }
 	.form-social__btn{
 		padding:1.5% 5%;
 		width:calc((100%/2)-10px);

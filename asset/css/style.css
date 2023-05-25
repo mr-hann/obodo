@@ -114,6 +114,19 @@ div[class="illustration-section"]{
 	margin-top: calc((100vh - 376px)/2);
 	text-align: center;
 }
+div[class="msg"]{
+	padding:20px 0 20px 20px;
+	color:rgb(221, 15, 15);
+	background:rgba(241, 72, 72, 0.349);
+	display: grid;
+	grid-template-columns:1fr 0.09fr;
+	border-radius:25px;
+    font-size:12px;
+	justify-content: center;
+	align-items: center;
+	margin:20px auto;
+	display: none;
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width:768px) {
     .navbar-brand{
