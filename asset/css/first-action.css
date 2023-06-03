@@ -3,7 +3,7 @@
     row-gap:8px;
     margin-top:24px;
 }
-div[class="todo-actions"]{
+div[class="todo-actions"],a[class="todo-actions"]{
     display: grid;
     padding:16px 0;
     grid-template-columns:0.4fr 1fr 0.4fr;
@@ -11,6 +11,8 @@ div[class="todo-actions"]{
     max-height: 74px;
     background: #F5F5F5;
     border-radius: 16px;
+    text-decoration: none;
+    color:#32323A;
 }
 .todo-actions>div{
     display: grid;

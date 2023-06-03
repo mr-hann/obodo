@@ -127,6 +127,9 @@ button{
 label[for="members-btn"]{
     margin:0;
 }
+.members-btn button[class="sellected"]{
+    background: #D3F5DF;
+}
 /*new input on click (members page)*/
 .name-of-members{
     padding:13px 16px;

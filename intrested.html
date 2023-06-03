@@ -46,7 +46,7 @@
             <div class="inputs">
             <label for="members-btn">What are you interested in?</label>
             <div class="members-btn">
-                <button class="sellected">Food & Drinks</button>
+                <button>Food & Drinks</button>
                 <button>Politics</button>
                 <button>Real Estate</button>
                 <button>Music</button>
@@ -71,17 +71,6 @@
           
      </div>
 
-    <script>
-        let form =document.forms;
-        form[0].addEventListener('submit',(e)=>{
-            e.preventDefault();
-        })
-        let buttons=document.querySelectorAll(".members-btn button");
-    for(let i=0;i<buttons.length;i++){
-        buttons[i].addEventListener('click',(e)=>{
-            e.target.classList.toggle("sellected");
-        })
-    }
-    </script>
+    <script src="src/intrested.js" type="module"></script>
      </body>
      </html>

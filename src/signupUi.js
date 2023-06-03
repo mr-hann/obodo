@@ -4,6 +4,9 @@ let userName=document.getElementById('Fullname-reg');
 let emailReg=document.getElementById('e-mail-reg');
 let passwordReg= document.getElementById('password-reg');
 
+
+
+
 //importing firbase to project
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getFirestore,doc,setDoc} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
@@ -35,22 +38,16 @@ const firebaseConfig = {
  const db = getFirestore(app);
 
  
-
+//checking if username is empty
 
 userName.addEventListener('keyup',(e)=>{
-  if(e.target.value!=""){
-      defulttext(e.target);
-  }else if(e.target.value.length<4){
-     Redwarning(e.target);
-  }else{
-     Redwarning(e.target);
-  }
+   defulttext(e.target);
 })
 
 //checking password
 ///^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(e.target.value)
 passwordReg.addEventListener('keyup',(e)=>{
-   if(!e.target.value || /^\s*$/.test(e.target.value)){
+   if(e.target.value || /^\s*$/.test(e.target.value)){
       Redwarning(e.target);
    }
    if(e.target.length<6){
@@ -61,8 +58,7 @@ passwordReg.addEventListener('keyup',(e)=>{
 
 //checking email
 emailReg.addEventListener('keyup',(e)=>{
-   let element=e.target;
-
+   
    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(element.value)){
       defulttext(e.target);
    }else{
@@ -71,12 +67,17 @@ emailReg.addEventListener('keyup',(e)=>{
    }
 })
 
-//const colref=collection(db,'users');
+
 
  //sign up auth
 const signUp = async (e)=>{
   e.preventDefault();
+    
+  console.log(); 
 
+  if(userName.value==null|| userName.value==undefined||(/^$/.test(userName.value))){
+      errorMsg("please! enter your name.");
+  }else{
 
    let valueEmail=emailReg.value;
    let valuePassword=passwordReg.value;
@@ -88,14 +89,20 @@ const signUp = async (e)=>{
       let userData = await createUserWithEmailAndPassword(auth,valueEmail,valuePassword).then((u) => {
          
       setDoc(doc(db,'users',u.user.uid),{
+         //populate this information to the db
             avatarURL:"",
             email:u.user.email,
             id:u.user.uid,
             name:userName.value,
             phoneNumber:""
+
         }).then(()=>{
+
+         //go to the next page
             monitorChange();
+
           });
+
       })
       
    }catch(error){
@@ -120,7 +127,7 @@ const signUp = async (e)=>{
       let errorMessage = error.message;
    }
 
-  
+}
    
 }
 
@@ -132,7 +139,7 @@ const monitorChange= async ()=>{
 
 onAuthStateChanged(auth, user => {
    if (user) {
-     window.location.href = "dashoard.html";
+     window.location.href = "name-entery.html";
     
    } else {
       window.location.href = "login.html";

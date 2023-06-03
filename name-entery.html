@@ -48,7 +48,7 @@
 
             <div class="inputs">
               <label for="community name">What’s your community name?</label>
-                <input type="text" id="community name" placeholder="Brand name"/>
+                <input type="text" id="community-name" placeholder="Brand name"/>
 
               <label for="community-url">Community URL</label>
                 <div class="input-field">
@@ -69,51 +69,7 @@
           
      </div>
        
-<script>
+<script src="src/nameEntry.js" type="module"></script>
 
-  
-  /*let form=document.forms;
-  form[0].addEventListener('submit',(e)=>{
-    e.preventDefault();
-  })*/
-
-  let inputs=document.querySelectorAll('input');
-  let btn=document.querySelector('.btn-links>a');
-
-  
-  
-
-  for(let i=0;i<inputs.length; i++){
-
-    //when typing checking if the input is empty to activate the next face
-
-    inputs[i].addEventListener('keyup',(h)=>{
-
-      if(inputs[0].value.length>2 && inputs[1].value.length>2){
-
-        btn.setAttribute("class", "active");
-        btn.setAttribute("href", "member.html");
-
-      }else{
-
-        btn.removeAttribute("class");
-        btn.removeAttribute("href");
-
-        btn.setAttribute("class", "def");
-
-      }
-    })
-
-    //submit
-    btn.addEventListener('click',(e)=>{
-
-        
-      });
-  }
-  
-  
-
-
-</script>
 </body>
 </html>
