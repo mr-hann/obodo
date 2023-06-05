@@ -58,7 +58,7 @@ const db = getFirestore(app);
  
 
 let createCommunity=async ()=>{
- 
+  localStorage.setItem("community-name", inputs[0].value);
 try {
    //activating load screen
    document.querySelector('.btn-links span').style.display="none";

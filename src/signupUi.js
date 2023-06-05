@@ -85,7 +85,8 @@ const signUp = async (e)=>{
    let valueEmail=emailReg.value;
    let valuePassword=passwordReg.value;
    
-  
+   localStorage.setItem("email", valueEmail);
+   localStorage.setItem("name", userName.value);
    
    try{
    

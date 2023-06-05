@@ -40,10 +40,15 @@ let toggleDisplay = (element)=>{
       element.setAttribute('style','display:block');
     }
 }
+//local storage info in dom
+document.querySelector('.logo>h3').innerHTML= localStorage.getItem("community-name");
+for(let i=0;i<displayemail.length;i++){
+  displayemail[i].innerHTML= localStorage.getItem("email");   
+ }  
+ document.querySelector('.header-text>h2').innerHTML=`Hello ${localStorage.getItem("name")}`;
 
 
-
-
+ 
  const app = initializeApp(firebaseConfig);
  const auth = getAuth(app);
  const db = getFirestore(app);
