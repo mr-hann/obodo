@@ -9,11 +9,12 @@ let btn=document.querySelector('.btn-links>a');
     //when typing checking if the input is empty to activate the next face
 
     inputs[i].addEventListener('keyup',(h)=>{
+     // if (inputs[0].value=="" || inputs[0].value=="/^$/" && inputs[1].value=="" || inputs[1].value=="/^/s$/"){
 
       if(inputs[0].value.length>3 && inputs[1].value.length>3){
 
         btn.setAttribute("class", "active");
-       // btn.setAttribute("href", "member.html");
+       
 
       }else{
 
@@ -23,6 +24,7 @@ let btn=document.querySelector('.btn-links>a');
         btn.setAttribute("class", "def");
 
       }
+  //  }
     })
 
     
@@ -52,6 +54,10 @@ const app = initializeApp(firebaseConfig);
 
 const auth=getAuth(app);
 const db = getFirestore(app);
+ //activating load screen
+ document.querySelector('.btn-links span').style.display="none";
+ document.querySelector('.btn-links svg').style.display="block";
+ 
 
 let createCommunity=async ()=>{
  
@@ -92,6 +98,9 @@ try {
 
  
 } catch (e) {
+  //activating load screen
+ document.querySelector('.btn-links span').style.display="block";
+ document.querySelector('.btn-links svg').style.display="none";
   console.error("Error adding document: ", e);
 }
 

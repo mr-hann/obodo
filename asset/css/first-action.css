@@ -9,6 +9,7 @@ div[class="todo-actions"],a[class="todo-actions"]{
     grid-template-columns:0.4fr 1fr 0.4fr;
     max-width: 400px;
     max-height: 74px;
+    cursor: pointer;
     background: #F5F5F5;
     border-radius: 16px;
     text-decoration: none;

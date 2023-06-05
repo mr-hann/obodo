@@ -49,7 +49,11 @@ buttons[i].addEventListener('click',(e)=>{
   
   
   let communityIntrest=()=>{
-   console.log(data);
+     //activating load screen
+/* document.querySelector('.btn-links span').style.display="none";
+ document.querySelector('.btn-links svg').style.display="block";
+ */
+   
   const communityRef = doc(db, 'community', document.cookie.split('=')[1]);
   
   setDoc(communityRef, {intrested:data}, { merge: true });

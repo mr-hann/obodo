@@ -127,6 +127,66 @@ div[class="msg"]{
 	margin:20px auto;
 	display: none;
 }
+
+/*load screen*/
+.spinner {
+	-webkit-animation: rotate 2s linear infinite;
+			animation: rotate 2s linear infinite;
+	z-index: 2;
+	display: grid;
+	margin: auto;
+	margin-top: -10px;
+	align-items: center;
+	align-self: center;
+	width: 35px;
+	height: 35px;
+  }
+  .spinner .path {
+	stroke: #ffff;
+	stroke-linecap: round;
+	-webkit-animation: dash 1.5s ease-in-out infinite;
+			animation: dash 1.5s ease-in-out infinite;
+  }
+  
+  @-webkit-keyframes rotate {
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes rotate {
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  @-webkit-keyframes dash {
+	0% {
+	  stroke-dasharray: 1, 150;
+	  stroke-dashoffset: 0;
+	}
+	50% {
+	  stroke-dasharray: 90, 150;
+	  stroke-dashoffset: -35;
+	}
+	100% {
+	  stroke-dasharray: 90, 150;
+	  stroke-dashoffset: -124;
+	}
+  }
+  @keyframes dash {
+	0% {
+	  stroke-dasharray: 1, 150;
+	  stroke-dashoffset: 0;
+	}
+	50% {
+	  stroke-dasharray: 90, 150;
+	  stroke-dashoffset: -35;
+	}
+	100% {
+	  stroke-dasharray: 90, 150;
+	  stroke-dashoffset: -124;
+	}
+  }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width:768px) {
     .navbar-brand{

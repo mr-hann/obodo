@@ -39,6 +39,8 @@ let membersBtnNotLastChild=document.querySelectorAll('.members-btn button:not(:l
          if(membersBtn[i].style.display=="none"){
              membersBtn[i].style.display="inline-block";
              inputDiv.style.display="none";
+             //when ever the cancel button is clicked clear the input
+             input.value="";
          }else{
              membersBtn[i].style.display="none";
              inputDiv.style.display="grid";
@@ -58,6 +60,7 @@ let membersBtnNotLastChild=document.querySelectorAll('.members-btn button:not(:l
              membersBtn[i].style.display="inline-block";
                //hidding input
                inputDiv.style.display="none";
+              
          }else{
              membersBtn[i].style.display="none";
               
@@ -75,6 +78,8 @@ for(let i=0; i<membersBtnNotLastChild.length;i++){
 membersBtnNotLastChild[i].addEventListener('click',(e)=>{
     e.target.setAttribute("class","sellected");
      data=e.target.innerHTML;
+     //clear tghe input when ever the user sellects a btn 
+     input.value="";
   // Remove the attribute from all other elements
   for (let i = 0; i < membersBtnNotLastChild.length; i++) {
     if (i !==p ) {
@@ -110,6 +115,10 @@ const db = getFirestore(app);
 
 
 let addMemerName=()=>{
+  //activating load screen
+/* document.querySelector('.btn-links span').style.display="none";
+ document.querySelector('.btn-links svg').style.display="block";
+ */
 const communityRef = doc(db, 'community', document.cookie.split('=')[1]);
 if(input.value=="" || input.value=="/^$/"){
     data=data;

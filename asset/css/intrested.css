@@ -9,6 +9,9 @@
     max-width: 136px;
     margin:0;
 }
+.btn-links> a{
+    cursor: pointer;
+}
 .members-btn button[class="sellected"]{
     background: #D3F5DF;
 }

@@ -47,7 +47,7 @@ userName.addEventListener('keyup',(e)=>{
 //checking password
 ///^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(e.target.value)
 passwordReg.addEventListener('keyup',(e)=>{
-   if(e.target.value || /^\s*$/.test(e.target.value)){
+   if(/^\s*$/.test(e.target.value)){
       Redwarning(e.target);
    }
    if(e.target.length<6){
@@ -59,7 +59,7 @@ passwordReg.addEventListener('keyup',(e)=>{
 //checking email
 emailReg.addEventListener('keyup',(e)=>{
    
-   if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(element.value)){
+   if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)){
       defulttext(e.target);
    }else{
      Redwarning(e.target); 
@@ -72,10 +72,13 @@ emailReg.addEventListener('keyup',(e)=>{
  //sign up auth
 const signUp = async (e)=>{
   e.preventDefault();
-    
-  console.log(); 
+  
 
-  if(userName.value==null|| userName.value==undefined||(/^$/.test(userName.value))){
+     //activating load screen
+   document.querySelector('.btn-form__submit span').style.display="none";
+   document.querySelector('.btn-form__submit svg').style.display="block";
+   
+  if(userName.value==null|| userName.value==undefined||(/^s$/.test(userName.value))){
       errorMsg("please! enter your name.");
   }else{
 
@@ -106,6 +109,9 @@ const signUp = async (e)=>{
       })
       
    }catch(error){
+//deactivating load screen
+      document.querySelector('.btn-form__submit span').style.display="block";
+      document.querySelector('.btn-form__submit svg').style.display="none";
 
       errordiv.style.display="grid";
        errorMsg(error.message);
@@ -128,7 +134,6 @@ const signUp = async (e)=>{
    }
 
 }
-   
 }
 
 // siign up btn

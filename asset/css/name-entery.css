@@ -83,6 +83,7 @@ input[id="community name"]{
 /*member page*/
 button [class="def"],.btn-links a[class="def"]{
     color: #D6D6D8;
+    cursor: pointer;
     background: #F5F5F5;
 }
 .btn-links a,button{
@@ -123,6 +124,7 @@ button{
     display:inline-block;
     color: #32323A;
     margin-top:25px;
+    cursor: pointer;
 }
 label[for="members-btn"]{
     margin:0;

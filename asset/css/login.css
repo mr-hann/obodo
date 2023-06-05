@@ -170,6 +170,11 @@ label{
 .form-social__btn span{
 	padding:5px 0;
 }
+.hide{
+	display: none;
+}
+
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width:768px) {

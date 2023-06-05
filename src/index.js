@@ -38,6 +38,10 @@ export const auth=getAuth(app);
 //login auth
 const loginEmailPassword = async (e)=>{
    e.preventDefault();
+   //activating load screen
+   document.querySelector('.btn-form__submit span').style.display="none";
+   document.querySelector('.btn-form__submit svg').style.display="block";
+   
    let valueEmail=email.value;
    let valuePassword=password.value;
    try{
@@ -46,8 +50,9 @@ const loginEmailPassword = async (e)=>{
    
       monitorChange();
    }catch(error){
-      
-   errorMsg(error);
+      document.querySelector('.btn-form__submit span').style.display="block";
+      document.querySelector('.btn-form__submit svg').style.display="none";
+      errorMsg(error);
 
    }
 
