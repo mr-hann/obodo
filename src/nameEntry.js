@@ -54,15 +54,15 @@ const app = initializeApp(firebaseConfig);
 
 const auth=getAuth(app);
 const db = getFirestore(app);
- //activating load screen
- document.querySelector('.btn-links span').style.display="none";
- document.querySelector('.btn-links svg').style.display="block";
+
  
 
 let createCommunity=async ()=>{
  
 try {
-  
+   //activating load screen
+   document.querySelector('.btn-links span').style.display="none";
+   document.querySelector('.btn-links svg').style.display="block";
   await onAuthStateChanged(auth,user => {
   
   if (user) {
