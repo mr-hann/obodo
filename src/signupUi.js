@@ -4,6 +4,8 @@ let userName=document.getElementById('Fullname-reg');
 let emailReg=document.getElementById('e-mail-reg');
 let passwordReg= document.getElementById('password-reg');
 
+//signing up with google and facebook btn
+let fbAndGoogleBtn=document.querySelectorAll('.form-social__btn');
 
 
 
@@ -41,17 +43,22 @@ const firebaseConfig = {
 //checking if username is empty
 
 userName.addEventListener('keyup',(e)=>{
-   defulttext(e.target);
+   if(/^\s*$/.test(e.target.value) || e.target.value.length<3){
+      Redwarning(e.target);
+   }
+   else{
+      defulttext(e.target);
+   }
 })
 
 //checking password
 ///^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(e.target.value)
 passwordReg.addEventListener('keyup',(e)=>{
-   if(/^\s*$/.test(e.target.value)){
+   if(/^\s*$/.test(e.target.value) || e.target.value.length<6){
       Redwarning(e.target);
    }
-   if(e.target.length<6){
-      Redwarning(e.target);
+   else{
+      defulttext(e.target);
    }
  })
 
@@ -91,23 +98,29 @@ const signUp = async (e)=>{
    try{
    
       let userData = await createUserWithEmailAndPassword(auth,valueEmail,valuePassword).then((u) => {
-         
-      setDoc(doc(db,'users',u.user.uid),{
-         //populate this information to the db
-            avatarURL:"",
-            email:u.user.email,
-            id:u.user.uid,
-            name:userName.value,
-            phoneNumber:""
-
-        }).then(()=>{
-
-         //go to the next page
-            monitorChange();
-
-          });
+        
+     updateProfile(auth.currentUser, {
+       displayName:userName.value,
+      }).then(()=>{
+         setDoc(doc(db,'users',u.user.uid),{
+            //populate this information to the db
+               avatarURL:"",
+               email:u.user.email,
+               id:u.user.uid,
+               name:u.user.displayName,
+               phoneNumber:""
+   
+           }).then(()=>{
+   
+            //go to the next page
+               monitorChange();
+   
+             });
+      })
+      
 
       })
+      
       
    }catch(error){
 //deactivating load screen
@@ -144,8 +157,9 @@ formSignUp.addEventListener('submit',signUp);
 const monitorChange= async ()=>{
 
 onAuthStateChanged(auth, user => {
+   
    if (user) {
-     window.location.href = "name-entery.html";
+    window.location.href = "name-entery.html";
     
    } else {
       window.location.href = "login.html";
@@ -164,8 +178,9 @@ cancelErorr.addEventListener('click',()=>{
 let errorMsg=(msg)=>{
    errorM.innerHTML=msg;
  }
+
  //defult text color
 let defulttext=(e)=>{
-   e.style.color=" #5B5B61";
-   e.style.border="0px";
+   e.style.color="#20b954";
+   e.style.border="1px solid #20b954";
 }

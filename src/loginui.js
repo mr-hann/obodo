@@ -38,8 +38,8 @@ export function errorMsg(msg){
 
 //defult text 
 export let activewrite= (e)=>{
-    e.style.border="1px solid blue";
-    e.style.color="#5B5B61";
+    e.style.color="#20b954";
+   e.style.border="1px solid #20b954";
 }
 //warinng ui on input
 export let Redwarning=(e)=>{

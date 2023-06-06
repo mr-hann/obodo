@@ -138,7 +138,8 @@ signOutBtn.addEventListener('click',(e)=>{
   }).catch((error) => {
     console.log(error)
   });
-
+  
+  localStorage.clear();
   
 })
 

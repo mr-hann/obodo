@@ -18,6 +18,29 @@ import {
    errorMsg
 } from "./loginui.js";
 
+import {Redwarning,cancelErorr,errorM,errordiv,activewrite} from './loginui.js';
+
+//checking email
+email.addEventListener('keyup',(e)=>{
+   
+   if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)){
+      activewrite(e.target);
+   }else{
+     Redwarning(e.target); 
+    
+   }
+})
+
+//checking password
+///^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(e.target.value)
+password.addEventListener('keyup',(e)=>{
+   if(/^\s*$/.test(e.target.value) || e.target.value.length<6){
+      Redwarning(e.target);
+   }
+   else{
+      activewrite(e.target);
+   }
+ })
 
 //linkin with firebase 
 export const firebaseConfig = {

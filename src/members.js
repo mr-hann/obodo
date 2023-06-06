@@ -116,9 +116,10 @@ const db = getFirestore(app);
 
 let addMemerName=()=>{
   //activating load screen
-/* document.querySelector('.btn-links span').style.display="none";
+ document.querySelector('.btn-links span').style.display="none";
  document.querySelector('.btn-links svg').style.display="block";
- */
+ 
+try{
 const communityRef = doc(db, 'community', document.cookie.split('=')[1]);
 if(input.value=="" || input.value=="/^$/"){
     data=data;
@@ -128,6 +129,13 @@ if(input.value=="" || input.value=="/^$/"){
 setDoc(communityRef, { nameOfMembers: data}, { merge: true });
 
 window.location.href = "intrested.html";
+}catch(error){
+
+  //deactivating load screen 
+  document.querySelector('.btn-links span').style.display="block";
+  document.querySelector('.btn-links svg').style.display="none";
+  console.log(error);
+}
 }
  
 

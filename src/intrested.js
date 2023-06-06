@@ -50,15 +50,24 @@ buttons[i].addEventListener('click',(e)=>{
   
   let communityIntrest=()=>{
      //activating load screen
-/* document.querySelector('.btn-links span').style.display="none";
+ document.querySelector('.btn-links span').style.display="none";
  document.querySelector('.btn-links svg').style.display="block";
- */
+ 
    
+
+  try{
   const communityRef = doc(db, 'community', document.cookie.split('=')[1]);
   
   setDoc(communityRef, {intrested:data}, { merge: true });
   
-  window.location.href = "first-action.html";
+  window.location.href = "first-action.html";}
+  catch(error){
+     //deactivating load screen
+ document.querySelector('.btn-links span').style.display="block";
+ document.querySelector('.btn-links svg').style.display="none";
+ 
+    console.log(error);
+  }
   }
    
   
